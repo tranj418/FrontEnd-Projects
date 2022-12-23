@@ -1,0 +1,93 @@
+-----------JS---------------
+//userNum = window.prompt('Enter a randon number.');
+
+const answer = Math.floor(Math.random() * userNum + 1);
+let guessAttempt = 0;
+
+document.getElementById('submitBtn').onclick = function(){
+    guess = document.getElementById('guessinput').value;
+
+    if(guess > answer){
+        document.getElementById('output').innerHTML = 'Guess too high, try again';
+    }
+    else if(guess < answer){
+        document.getElementById('output').innerHTML = 'Guess too low, try again';
+    }
+    else{
+        document.getElementById('output').innerHTML = 'Congratulations! That is the correct answer!';
+    }
+}
+
+
+-----------HTML---------------
+<!doctype html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+        <title>Number Guess</title>
+
+
+    </head>
+    <body>
+
+        <label id="header">Number Guessing Game</label>
+
+        <div class="begin">
+            <label id="intro">Enter your guess attempt below</label><br><br>
+
+            <input type="text" class="inputtxt">
+            <button type="submit" id="submitBtn">Submit</button><br><br>
+
+            <label id="output"></label>
+        </div>
+
+
+
+        <script src="index.js"></script>
+    </body>
+</html>
+
+
+-----------CSS---------------
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header{
+    position: fixed;
+    top: 35%;
+    left: 47%;
+    margin-top: auto;
+    margin-left: auto;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+
+div{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    border: solid black;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+}
+
+#submitBtn{
+    width: 80px;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: ease-out 0.3s;
+}
+
+#submitBtn:hover{
+    box-shadow: inset 80px 0 0 0 #3ddff5;
+}
+
