@@ -1,0 +1,74 @@
+------------HTML------------
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+
+
+    </head>
+    <body>
+        <div>
+            <table class="calculator"></table>
+                <tr>
+                    <td colspan="3"><input type="text" id="output" disabled></td>
+                    <td><button type="button" value="clear">Clear</button></td>
+                    <td><button type="button" value="Del">Del</button></td>
+                </tr><br><br>
+
+                <!--<td><input type="button" value="1" onclick="display('1')"/></td>-->
+                <tr>
+                    <td><button type="button" value="1">1</button></td>
+                    <td><button type="button" value="2">2</button></td>
+                    <td><button type="button" value="3">3</button></td>
+                    <td><button type="button" value="+">+</button></td>
+                </tr><br><br>
+                <tr>
+                    <td><button type="button" value="4">4</button></td>
+                    <td><button type="button" value="5">5</button></td>
+                    <td><button type="button" value="6">6</button></td>
+                    <td><button type="button" value="-">-</button></td>
+                </tr><br><br>
+                <tr>
+                    <td><button type="button" value="7">7</button></td>
+                    <td><button type="button" value="8">8</button></td>
+                    <td><button type="button" value="9">9</button></td>
+                    <td><button type="button" value="*">*</button></td>
+                </tr><br><br>
+                <tr>
+                    <td><button type="button" value="0">0</button></td>
+                    <td><button type="button" value=".">.</button></td>
+                    <td><button type="button" value="=">=</button></td>
+                    <td><button type="button" value="/">/</button></td>
+                </tr><br><br>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
+
+
+------------CSS------------
+
+#output{
+    width: 19%;
+    font-size: 20px;
+    height: 10%;
+    border-radius: 10px;
+    transition: ease-in 0.3s;
+}
+
+button{
+    font-size: 20px;
+    height: 15%;
+    width: 10%;
+    border-radius: 10px;
+    transition: ease-in 0.3s;
+}
+
+-------------JS-------------
+
+document.getElementById('clear').onclick = function(){
+    document.getElementById('output').value = '';
+}
+
+
