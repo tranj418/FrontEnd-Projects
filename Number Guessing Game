@@ -1,8 +1,10 @@
 -----------JS---------------
-//userNum = window.prompt('Enter a randon number.');
+userNum = window.prompt('Enter a randon number.');
 
 const answer = Math.floor(Math.random() * userNum + 1);
 let guessAttempt = 0;
+
+document.getElementById('intro').innerHTML = `Enter a number between 1 and ${userNum}`;
 
 document.getElementById('submitBtn').onclick = function(){
     guess = document.getElementById('guessinput').value;
@@ -17,6 +19,7 @@ document.getElementById('submitBtn').onclick = function(){
         document.getElementById('output').innerHTML = 'Congratulations! That is the correct answer!';
     }
 }
+
 
 
 -----------HTML---------------
@@ -35,7 +38,7 @@ document.getElementById('submitBtn').onclick = function(){
         <label id="header">Number Guessing Game</label>
 
         <div class="begin">
-            <label id="intro">Enter your guess attempt below</label><br><br>
+            <label id="intro"></label><br><br>
 
             <input type="text" class="inputtxt">
             <button type="submit" id="submitBtn">Submit</button><br><br>
