@@ -1,0 +1,95 @@
+---------------------JS------------------
+let addBtn = document.getElementById('myBtn');
+let taskContainer = document.getElementById('tasks');
+let inputField = document.getElementById('taskInput');
+
+addBtn.addEventListener('click', function(){
+    var paragraph = document.createElement('p')
+    paragraph.classList.add('paragraph-styling');
+    paragraph.innerText = inputField.value;
+    taskContainer.appendChild(paragraph);
+    inputField.value = '';
+    paragraph.addEventListener('click', function(){
+        paragraph.style.textDecoration = 'line-through';
+    })
+
+    paragraph.addEventListener('dblclick', function(){
+        taskContainer.removeChild(paragraph);
+    })
+})
+
+
+
+------------------html----------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <h1>To Do List</h1>
+    <div class="container">
+            <input type="text" id="taskInput">
+            <button type="button" id="myBtn">Add</button>
+            <div id="tasks">
+            </div>
+    </div>
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+---------------------css--------------------
+html, body{
+    width: 50%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container{
+    width: 360px;
+}
+
+#taskInput{
+    width: 300px;
+    height: 25px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+#myBtn{
+    height: 30px;
+    width: 60px;
+    border: 1px solid black;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+#tasks{
+    margin-top: 25px;
+
+}
+
+.paragraph-styling{
+    margin: 0px;
+    cursor: pointer;
+    font-size: 20px;
+}
