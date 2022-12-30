@@ -33,12 +33,15 @@ addBtn.addEventListener('click', function(){
 
 </head>
 <body>
-    <h1>To Do List</h1>
-    <div class="container">
-            <input type="text" id="taskInput">
-            <button type="button" id="myBtn">Add</button>
-            <div id="tasks">
-            </div>
+    <div class="box">
+        <h1>To Do List</h1>
+        <input type="text" id="taskInput" 
+        placeholder="Tasks i.e. Shopping, Homework, Cleaning"
+        onfocus="this.placeholder=''" 
+        onblur="this.placeholder='Tasks i.e. Shopping, Homework, Cleaning'">
+        <button type="button" id="myBtn">Add</button>
+        <div id="tasks">
+        </div>
     </div>
 
 
@@ -78,6 +81,7 @@ html, body{
 #myBtn{
     height: 30px;
     width: 60px;
+    font-weight: bold;
     border: 1px solid black;
     vertical-align: middle;
     font-size: 20px;
